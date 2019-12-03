@@ -13,7 +13,8 @@ func main() {
 
 }
 
-func RunProgram(program []int) ([]int, error) {
+func RunProgram(input []int) ([]int, error) {
+	program := input
 	index := 0
 	hit99 := false
 	for index < len(program) && !hit99 {
