@@ -22,22 +22,22 @@ func TestCalcFuel2(t *testing.T) {
 func TestCalcFuel3(t *testing.T) {
 	mass := 1969
 	fuel := CalcFuel(mass)
-	if fuel != 654 {
-		t.Errorf("Fuel was incorrect, got: %d, want: %d.", fuel, 654)
+	if fuel != 966 {
+		t.Errorf("Fuel was incorrect, got: %d, want: %d.", fuel, 966)
 	}
 }
 
 func TestCalcFuel4(t *testing.T) {
 	mass := 100756
 	fuel := CalcFuel(mass)
-	if fuel != 33583 {
-		t.Errorf("Fuel was incorrect, got: %d, want: %d.", fuel, 33583)
+	if fuel != 50346 {
+		t.Errorf("Fuel was incorrect, got: %d, want: %d.", fuel, 50346)
 	}
 }
 
 func TestCalcFuel6(t *testing.T) {
 	filePath := "testdata.txt"
-	expected := 3432671
+	expected := 5146132
 
 	actual := CalcFuelCounterUpper(filePath)
 

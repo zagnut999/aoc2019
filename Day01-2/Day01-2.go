@@ -14,7 +14,15 @@ func main() {
 }
 
 func CalcFuel(mass int) int {
-	return mass/3 - 2
+	fuel := mass/3 - 2
+
+	if fuel <= 0 {
+		return 0
+	}
+
+	fuelsFuel := CalcFuel(fuel)
+
+	return fuel + fuelsFuel
 }
 
 //https://stackoverflow.com/questions/8757389/reading-file-line-by-line-in-go
