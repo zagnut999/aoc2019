@@ -140,3 +140,41 @@ func TestFinal(t *testing.T) {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
 	}
 }
+
+func TestFinalDay2(t *testing.T) {
+	program := GetTestData("testdata.txt")
+	expected := 8298
+
+	intcodes, err1 := ParseProgram(program)
+	if err1 != nil {
+		t.Errorf("Error parsing program %s", err1.Error())
+	}
+
+	foundNoun := -1
+	foundVerb := -1
+	found := false
+	for noun := 0; noun < 100 && !found; noun++ {
+		for verb := 0; verb < 100 && !found; verb++ {
+			rundata := Aray_Clone(intcodes)
+			rundata[1] = noun
+			rundata[2] = verb
+
+			result, err2 := RunProgram(rundata)
+			if err2 != nil {
+				t.Errorf("Error running program %s", err2.Error())
+			}
+
+			if result[0] == 19690720 {
+				found = true
+				foundNoun = noun
+				foundVerb = verb
+			}
+		}
+	}
+
+	actual := 100*foundNoun + foundVerb
+
+	if actual != expected {
+		t.Errorf("Expected '%d', actually '%d'", expected, actual)
+	}
+}
