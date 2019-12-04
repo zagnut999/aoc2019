@@ -1,6 +1,7 @@
 package main
 
 import (
+	"aoc2019/utilities"
 	"bufio"
 	"errors"
 	"fmt"
@@ -52,7 +53,7 @@ func RunProgram(program []int) ([]int, error) {
 }
 
 func ParseProgram(program string) ([]int, error) {
-	return Slice_Atoi(strings.Split(program, ","))
+	return utilities.Slice_Atoi(strings.Split(program, ","))
 }
 
 //https://stackoverflow.com/questions/8757389/reading-file-line-by-line-in-go

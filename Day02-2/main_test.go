@@ -1,6 +1,7 @@
 package main
 
 import (
+	"aoc2019/utilities"
 	"strings"
 	"testing"
 )
@@ -42,7 +43,7 @@ func TestProgramResult1(t *testing.T) {
 		t.Errorf("Error running program %s", err2.Error())
 	}
 
-	actual := strings.Join(Slice_Itoa(result), ",")
+	actual := strings.Join(utilities.Slice_Itoa(result), ",")
 
 	if actual != expected {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
@@ -64,7 +65,7 @@ func TestProgramResult2(t *testing.T) {
 		t.Errorf("Error running program %s", err2.Error())
 	}
 
-	actual := strings.Join(Slice_Itoa(result), ",")
+	actual := strings.Join(utilities.Slice_Itoa(result), ",")
 
 	if actual != expected {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
@@ -86,7 +87,7 @@ func TestProgramResult3(t *testing.T) {
 		t.Errorf("Error running program %s", err2.Error())
 	}
 
-	actual := strings.Join(Slice_Itoa(result), ",")
+	actual := strings.Join(utilities.Slice_Itoa(result), ",")
 
 	if actual != expected {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
@@ -108,7 +109,7 @@ func TestProgramResult4(t *testing.T) {
 		t.Errorf("Error running program %s", err2.Error())
 	}
 
-	actual := strings.Join(Slice_Itoa(result), ",")
+	actual := strings.Join(utilities.Slice_Itoa(result), ",")
 
 	if actual != expected {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
@@ -134,7 +135,7 @@ func TestFinal(t *testing.T) {
 		t.Errorf("Error running program %s", err2.Error())
 	}
 
-	actual := strings.Join(Slice_Itoa(result), ",")
+	actual := strings.Join(utilities.Slice_Itoa(result), ",")
 
 	if actual != expected {
 		t.Errorf("Expected '%s', actually '%s'", expected, actual)
@@ -155,7 +156,7 @@ func TestFinalDay2(t *testing.T) {
 	found := false
 	for noun := 0; noun < 100 && !found; noun++ {
 		for verb := 0; verb < 100 && !found; verb++ {
-			rundata := Aray_Clone(intcodes)
+			rundata := utilities.Aray_Clone(intcodes)
 			rundata[1] = noun
 			rundata[2] = verb
 
